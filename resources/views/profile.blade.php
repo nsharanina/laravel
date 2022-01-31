@@ -6,13 +6,9 @@
 @endsection
 
 
-
-
 @section('content')
-  <profile-component>
-    
-  </profile-component>
 
+  
   <div class="container">
 
   @if ($errors->any())
@@ -131,7 +127,7 @@
                  @if ($user->addresses->isEmpty())
                  <div class="form-check mb-3">
                       <input class="form-check-input" name="isMain" type="checkbox" id="main" value="1" disabled checked>
-                      <input type="hidden" id="main" name="isMain" value="1">
+                      <input type="" id="main" name="isMain" value="1">
                       <label class="form-check-label" for="main">
                         Сделать основным
                       </label>

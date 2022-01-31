@@ -51,7 +51,7 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         $addresses = Address::where('user_id', $user->id)->get();
-        return view('profile', compact('user'));
+        return view('profile', compact('user', 'addresses'));
     }
 
     public function profileUpdate (Request $request)

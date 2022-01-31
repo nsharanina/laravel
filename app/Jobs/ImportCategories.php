@@ -46,7 +46,7 @@ class ImportCategories implements ShouldQueue
             
             if ($i++ == 0) continue;
             $upsert [] = [
-                'id' =>$data[0],
+                // 'id' =>$data[0],
                 'name' => $data[1],
                 'description' => $data[2],
                 'picture' => $data[3],

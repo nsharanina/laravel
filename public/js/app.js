@@ -5284,9 +5284,121 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['user', 'addresses'],
+  data: function data() {
+    return {};
+  },
   mounted: function mounted() {
-    console.log('Component mounted.');
+    console.log(this.addresses);
   }
 });
 
@@ -28020,14 +28132,257 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("h1", [_vm._v("Профиль пользователя")]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-8" }, [
+        _c("div", { staticClass: "mb-3" }, [
+          _c(
+            "label",
+            { staticClass: "form-label", attrs: { for: "exampleInputEmail1" } },
+            [_vm._v("\n                    Почта\n                ")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.user.email,
+                expression: "user.email",
+              },
+            ],
+            staticClass: "form-control",
+            attrs: { type: "email", name: "email" },
+            domProps: { value: _vm.user.email },
+            on: {
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.user, "email", $event.target.value)
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-3" }, [
+          _c("label", { staticClass: "form-label" }, [_vm._v("Имя")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.user.name,
+                expression: "user.name",
+              },
+            ],
+            staticClass: "form-control",
+            attrs: { name: "name" },
+            domProps: { value: _vm.user.name },
+            on: {
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.user, "name", $event.target.value)
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "mb-3" },
+          [
+            _c("label", { staticClass: "form-label" }, [
+              _vm._v("Список адресов "),
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.addresses, function (address) {
+              return _c("div", { key: address.id }, [
+                address.main == 1
+                  ? _c("div", [
+                      _c("input", {
+                        attrs: {
+                          checked: "",
+                          id: "address.id",
+                          type: "radio",
+                          name: "main_address",
+                          value: "address.id",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "address.id" } }, [
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(address.address) +
+                            "\n                        "
+                        ),
+                      ]),
+                    ])
+                  : _vm._e(),
+              ])
+            }),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _vm._m(3),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-4 mb-3 text-center" }, [
+        _c("label", { staticClass: "form-label mb-3" }, [
+          _vm._v("Изображение"),
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("img", {
+            staticStyle: {
+              height: "98px",
+              "margin-bottom": "10px",
+              "border-radius": "98px",
+              border: "2px solid grey",
+            },
+            attrs: { src: "../storage/image/users/" + _vm.user.picture },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          staticClass: "form-control",
+          attrs: { name: "picture", type: "file" },
+        }),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("Профиль пользователя")])])
+    return _c("div", { staticClass: "mb-3" }, [
+      _c(
+        "label",
+        { staticClass: "form-label", attrs: { for: "exampleInputPassword1" } },
+        [_vm._v("Текущий пароль")]
+      ),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: {
+          name: "current_password",
+          type: "password",
+          autocomplete: "new-password",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-3" }, [
+      _c(
+        "label",
+        { staticClass: "form-label", attrs: { for: "exampleInputPassword1" } },
+        [_vm._v("Новый пароль")]
+      ),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { name: "password", type: "password" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-3" }, [
+      _c(
+        "label",
+        { staticClass: "form-label", attrs: { for: "exampleInputPassword1" } },
+        [_vm._v("Подтверждение пароля")]
+      ),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { name: "password_confirmation", type: "password" },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-3" }, [
+      _c("label", { staticClass: "form-label" }, [
+        _vm._v("\n                    Добавить адрес\n                    "),
+      ]),
+      _vm._v(
+        "\n                    \n                    @if ($user->addresses->isEmpty())\n                    "
+      ),
+      _c("div", { staticClass: "form-check mb-3" }, [
+        _c("input", {
+          staticClass: "form-check-input",
+          attrs: {
+            name: "isMain",
+            type: "checkbox",
+            id: "main",
+            value: "1",
+            disabled: "",
+            checked: "",
+          },
+        }),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "hidden", id: "main", name: "isMain", value: "1" },
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "form-check-label", attrs: { for: "main" } },
+          [
+            _vm._v(
+              "\n                            Сделать основным\n                        "
+            ),
+          ]
+        ),
+      ]),
+      _vm._v(" \n                    @else\n                    "),
+      _c("div", { staticClass: "form-check mb-3" }, [
+        _c("input", {
+          staticClass: "form-check-input",
+          attrs: { type: "checkbox", name: "isMain", value: "1", id: "main" },
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "form-check-label", attrs: { for: "main" } },
+          [
+            _vm._v(
+              "\n                            Сделать основным\n                        "
+            ),
+          ]
+        ),
+      ]),
+      _vm._v(
+        "\n                    @endif\n                    \n\n                    "
+      ),
+      _c("input", {
+        staticClass: "form-control",
+        attrs: { name: "new_address", placeholder: "Введите адрес доставки" },
+      }),
+    ])
   },
 ]
 render._withStripped = true

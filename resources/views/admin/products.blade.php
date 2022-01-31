@@ -66,7 +66,7 @@
                 <div class="mb-3">
                     <label class="form-label">Название</label>
                     <input name="name" class="form-control" value="" placeholder="Введите название товара">
-                    <input type="hidden" name="category_id" value="">
+                    
                 </div>
                     
                 <div class="mb-3">

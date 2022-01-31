@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\CategoryController;
@@ -31,7 +32,9 @@ Route::prefix('home')->group(function () {
     Route::get('/profile', [HomeController::class, 'profile'])->middleware('auth')->name('profile');
     Route::post('/profile/update', [HomeController::class, 'profileUpdate'])->name('profileUpdate');
     Route::post('addCategory', [CategoryController::class, 'addCategory'])->name('addCategory');
-    Route::post('/orders', [HomeController::class, 'index'])->name('orders');
+    Route::post('/orders', [OrderController::class, 'index'])->name('orders');
+    Route::post('/repeatOrder', [OrderController::class, 'repeatOrder'])->name('repeatOrder');
+    
 
 });
 

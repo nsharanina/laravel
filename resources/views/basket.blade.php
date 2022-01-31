@@ -71,13 +71,13 @@
     <form method="post" action="{{ route('createOrder')}}">
     @csrf    
         <label>Имя</label>
-        <input class="form-control mb-3" name="name" value="{{ $name }}">
+        <input class="form-control mb-3" name="name" value="{{ $name ?? '' }}">
 
         <label>Адрес доставки</label>
         <input class="form-control mb-3" name="address" value="{{$mainAddress->address ?? ''}}">
 
         <label>Почта</label>
-        <input class="form-control mb-5"name="email" value="{{$email}}">
+        <input class="form-control mb-5"name="email" value="{{$email ?? ''}}">
 
 
         @if($products->isEmpty())

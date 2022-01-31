@@ -97,7 +97,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('basket') }}">
-                                Корзина ({{array_sum(session('products')??[])}})
+                                Корзина ({{ array_sum(session('products') ?? []) }})
                             </a>
                         </li>
                         <!-- Authentication Links -->

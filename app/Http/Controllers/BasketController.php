@@ -137,6 +137,7 @@ class BasketController extends Controller
         ]);
 
         $products = collect();
+        
         collect(session('products'))->each(function($quantity,$id) use($order, $products){
             $product = Product::find($id);
             $order->products()->attach($product,[
@@ -148,7 +149,9 @@ class BasketController extends Controller
                 'price' => $product->price,
                 'quantity'=> $quantity
             ]);
+            
         });
+        dd($products);
         $email = $user ? $user->email : $request['email'];
         $data = [
             'user' => [
